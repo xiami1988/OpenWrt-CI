@@ -1,0 +1,15 @@
+#cetron_ct3003 cmcc_rax3000m h3c_nx30pro jcg_q30 konka_komi-a31 livinet_zr-3020 360-t7 360-t7-108M xiaomi_mi-router-wr30u-112m xiaomi_mi-router-wr30u-stock
+#theme
+CONFIG_PACKAGE_luci-app-argon-config=y
+CONFIG_PACKAGE_luci-theme-argon=y
+CONFIG_PACKAGE_luci-theme-design=n
+CONFIG_PACKAGE_luci-app-design-config=n
+#app
+CONFIG_PACKAGE_luci-app-upnp=y
+CONFIG_PACKAGE_luci-app-diskman=y
+CONFIG_PACKAGE_luci-app-fileassistant=y
+CONFIG_PACKAGE_luci-app-ddns=y
+CONFIG_PACKAGE_luci-app-vlmcsd=y
+CONFIG_PACKAGE_luci-app-zerotier=y
+CONFIG_PACKAGE_luci-app-ttyd=y
+CONFIG_PACKAGE_luci-app-ramfree=y
