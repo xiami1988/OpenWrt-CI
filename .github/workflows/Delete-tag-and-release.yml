@@ -4,7 +4,7 @@ name: Delete-tag-and-release
 on:
   #自动执行：每周六早上0点
   schedule:
-    - cron: 0 15 * * Sat
+    - cron: 0 16 * * Fri
   #手动编译
   workflow_dispatch:
 

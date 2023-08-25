@@ -4,7 +4,7 @@ name: u-boot
 on:
   #自动执行：每周六早上1点
   schedule:
-    - cron: 0 16 * * Sat
+    - cron: 0 17 * * Fri
   #手动编译
   workflow_dispatch:
 
