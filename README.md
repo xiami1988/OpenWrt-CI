@@ -1,5 +1,6 @@
 # OpenWRT-CI
-云编译OpenWRT固件
+云编译OpenWRT固件 fork以后方可使用(自动编译设置的时间为UTC时间)
+
 CI 来自https://github.com/VIKINGYFY/OpenWRT-CI
 
 hanwckf mt798x源码 
@@ -28,10 +29,31 @@ https://github.com/hanwckf/bl-mt798x
 
 # 目录简要说明：
 
-Depends.txt——环境依赖列表
+1.workflows——自定义CI配置
 
-Scripts——编译固件自定义脚本
+·········Delete-tag-and-release.yml   	删除Releases、Workflows
 
-Config——自定义配置
+·········OpenWrt-CORE.yml     	OpenWrt编译核心
 
-workflows——自定义CI配置
+·········OpenWrt-CORE.yml     	OpenWrt编译核心
+
+·········其它均为action项目
+
+2.Config——自定义配置
+
+·········Uboot.sh        编译uboot的机型
+
+·········immortalwrt-hanwckf.txt/rax3000m-emmc.txt + 源defconfig目录内预置的配置文件          hanwckf源编译的配置
+
+·········General.txt + XX（编译源）.txt    其它源编译的配置
+
+3.Depends.txt——环境依赖列表
+
+4.Scripts——编译固件自定义脚本
+
+·········Plugins.sh      clone默认源中没有及需要替换的插件及其它
+
+·········Settings.sh     删除冲突插件及其它
+
+·········Uboot.sh        定义编译uboot的机型
+ 
