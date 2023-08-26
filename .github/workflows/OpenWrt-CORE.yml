@@ -108,7 +108,10 @@ jobs:
           if [ $OpenWrt_TARGET = "immortalwrt-hanwckf" ] ; 
           then
             cat defconfig/mt7981-ax3000.config $GITHUB_WORKSPACE/Config/immortalwrt-hanwckf.txt >> .config
-          else
+            else if [ $OpenWrt_TARGET = "rax3000m-emmc" ] ;
+            then
+            	cat defconfig/mt7981-ax3000-emmc.config $GITHUB_WORKSPACE/Config/rax3000m-emmc.txt >> .config
+                fi
             cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
           fi
           cat .config
