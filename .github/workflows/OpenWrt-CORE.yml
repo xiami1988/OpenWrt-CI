@@ -147,7 +147,7 @@ jobs:
         run: |
           cd ./openwrt && mkdir ./upload
 
-          rm -rf $(find ./bin/targets/ -iregex ".*\(json\|manifest\|buildinfo\|sha256sums\|packages\)$")
+          rm -rf $(find ./bin/targets/ -iregex ".*\(json\|config.buildinfo\|feeds.buildinfo\|version.buildinfo\|packages\)$")
           cp -rf $(find ./bin/targets/ -type f -iname "*.*") ./upload/
           cp -rf ./.config ./upload/Config_"$OpenWrt_TARGET"_"$OpenWrt_SOURCE"_"$OpenWrt_DATE".txt
 

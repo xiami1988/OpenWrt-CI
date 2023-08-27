@@ -33,7 +33,7 @@ https://github.com/hanwckf/bl-mt798x
 
 ·········Delete-tag-and-release.yml   	删除Releases、Workflows
 
-·········OpenWrt-CORE.yml     	OpenWrt编译核心
+·········u-boot-CORE.yml    	uboot编译核心
 
 ·········OpenWrt-CORE.yml     	OpenWrt编译核心
 
