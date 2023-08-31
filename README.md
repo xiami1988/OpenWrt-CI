@@ -41,8 +41,6 @@ https://github.com/hanwckf/bl-mt798x
 
 2.Config——自定义配置
 
-·········Uboot.sh        编译uboot的机型
-
 ·········immortalwrt-hanwckf.txt/rax3000m-emmc.txt + 源defconfig目录内预置的配置文件          hanwckf源编译的配置
 
 ·········General.txt + XX（编译源）.txt    其它源编译的配置
