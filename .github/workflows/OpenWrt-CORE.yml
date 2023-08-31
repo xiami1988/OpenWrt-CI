@@ -105,14 +105,12 @@ jobs:
           cd ./openwrt
 
           rm -rf ./tmp* ./.config*
+
           if [ $OpenWrt_TARGET = "immortalwrt-hanwckf" ] ; 
-          then
-            cat defconfig/mt7981-ax3000.config $GITHUB_WORKSPACE/Config/immortalwrt-hanwckf.txt >> .config
-            else if [ $OpenWrt_TARGET = "rax3000m-emmc" ] ;
-            then
-            	cat defconfig/mt7981-ax3000-emmc.config $GITHUB_WORKSPACE/Config/rax3000m-emmc.txt >> .config
-                fi
-            cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
+            then cat defconfig/mt7981-ax3000.config $GITHUB_WORKSPACE/Config/immortalwrt-hanwckf.txt >> .config
+            elif [ $OpenWrt_TARGET = "rax3000m-emmc" ] ;
+            then cat defconfig/mt7981-ax3000-emmc.config $GITHUB_WORKSPACE/Config/rax3000m-emmc.txt >> .config
+            else cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
           fi
           cat .config
           $GITHUB_WORKSPACE/Scripts/Extras.sh
