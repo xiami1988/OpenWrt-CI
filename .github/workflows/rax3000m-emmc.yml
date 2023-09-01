@@ -28,6 +28,6 @@ jobs:
       #默认地址
       OpenWrt_IP: 192.168.2.1
       #默认源码
-      OpenWrt_URL: https://github.com/lgs2007m/immortalwrt-mt798x-rax3000m-emmc.git
+      OpenWrt_URL: https://github.com/abandon-xyz/immortalwrt-mt798x.git
       #默认分支
-      OpenWrt_BRANCH: openwrt-21.02
+      OpenWrt_BRANCH: rax3000m
