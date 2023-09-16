@@ -83,22 +83,23 @@ jobs:
         run: |
           git clone --depth=1 --single-branch --branch $OpenWrt_BRANCH $OpenWrt_URL ./openwrt
 
-      - name: Update Feeds
+      - name: Update Feeds & Custom Scripts
         run: |
           cd ./openwrt
 
           ./scripts/feeds update -a
-          ./scripts/feeds install -a
-
-      - name: Custom Scripts
-        run: |
-          cd ./openwrt
 
           $GITHUB_WORKSPACE/Scripts/Settings.sh
+
+          $GITHUB_WORKSPACE/Scripts/Golang.sh
 
           cd ./package
 
           $GITHUB_WORKSPACE/Scripts/Plugins.sh
+
+          cd ..
+
+          ./scripts/feeds install -a
 
       - name: Custom Settings
         run: |
