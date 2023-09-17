@@ -18,7 +18,7 @@ if [[ $OpenWrt_URL == *"lede"* ]] ; then
   sed -i 's/os.date()/os.date("%Y-%m-%d %H:%M:%S %A")/g' $(find ./package/*/autocore/files/ -type f -name "index.htm")
 fi
 #golang
-if [[ $OpenWrt_URL == *"rax3000m-emmc"* ]] ; then
+if [[ $OpenWrt_TARGET == *"rax3000m-emmc"* ]] ; then
   rm -rf feeds/packages/lang/golang
   git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
 fi
