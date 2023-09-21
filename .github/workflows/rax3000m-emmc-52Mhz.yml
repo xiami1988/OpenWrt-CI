@@ -1,0 +1,33 @@
+#CI项目名
+name: rax3000m-emmc-52Mhz
+
+on:
+  #自动执行：每周六早上1点
+  schedule:
+    - cron: 0 17 * * Fri
+  #手动编译
+  workflow_dispatch:
+
+#CI权限
+permissions: write-all
+
+#CI任务
+jobs:
+  openwrt_config:
+    #调用公用编译核心OpenWrt-CORE.yml
+    uses: ./.github/workflows/OpenWrt-CORE.yml
+    with:
+      #编译平台
+      OpenWrt_TARGET: rax3000m-emmc-52Mhz
+      #默认主题
+      OpenWrt_THEME: argon
+      #默认主机名
+      OpenWrt_NAME: ImmortalWrt
+      #默认密码，仅作展示，请勿乱改
+      OpenWrt_PW: 无
+      #默认地址
+      OpenWrt_IP: 192.168.2.1
+      #默认源码
+      OpenWrt_URL: https://github.com/abandon-xyz/immortalwrt-mt798x.git
+      #默认分支
+      OpenWrt_BRANCH: rax3000m

@@ -18,6 +18,11 @@ if [[ $OpenWrt_URL == *"lede"* ]] ; then
   sed -i 's/os.date()/os.date("%Y-%m-%d %H:%M:%S %A")/g' $(find ./package/*/autocore/files/ -type f -name "index.htm")
 fi
 
+#设置频率
+if [[ $OpenWrt_TARGET == *"rax3000m-emmc-52Mhz"* ]] ; then
+  sed -i 's/max-frequency = <26000000>/max-frequency = <52000000>/g' ./target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-cmcc-rax3000m-emmc.dts
+fi
+
 << EOF
 #golang
 if [[ $OpenWrt_TARGET == *"rax3000m-emmc"* ]] ; then

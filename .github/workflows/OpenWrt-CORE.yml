@@ -107,7 +107,9 @@ jobs:
 
           if [ $OpenWrt_TARGET = "immortalwrt-hanwckf" ] ; 
             then cat defconfig/mt7981-ax3000.config $GITHUB_WORKSPACE/Config/immortalwrt-hanwckf.txt >> .config
-            elif [ $OpenWrt_TARGET = "rax3000m-emmc" ] ;
+            elif [ $OpenWrt_TARGET = "rax3000m-emmc-26Mhz" ] ;
+            then cat defconfig/mt7981-ax3000-emmc.config $GITHUB_WORKSPACE/Config/rax3000m-emmc.txt >> .config
+            elif [ $OpenWrt_TARGET = "rax3000m-emmc-52Mhz" ] ;
             then cat defconfig/mt7981-ax3000-emmc.config $GITHUB_WORKSPACE/Config/rax3000m-emmc.txt >> .config
             else cat $GITHUB_WORKSPACE/Config/$OpenWrt_TARGET.txt $GITHUB_WORKSPACE/Config/General.txt >> .config
           fi
@@ -145,7 +147,7 @@ jobs:
           cd ./openwrt && mkdir ./upload
 
           rm -rf $(find ./bin/targets/ -iregex ".*\(json\|config.buildinfo\|feeds.buildinfo\|version.buildinfo\|packages\)$")
-          cp -rf $(find ./bin/targets/ -type f -iname "*.*") ./upload/
+          cp -rf $(find ./bin/targets/ -type f -iname "*") ./upload/
           cp -rf ./.config ./upload/Config_"$OpenWrt_TARGET"_"$OpenWrt_SOURCE"_"$OpenWrt_DATE".txt
 
           cd ./upload
